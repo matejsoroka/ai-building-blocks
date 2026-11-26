@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Naučte se stavět s AI jako s LEGO kostkami. Praktický kurz pro Česko a Slovensko.">
+    <title>AI Building Blocks - Stavte s umělou inteligencí</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            animation: fadeInUp 1.2s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            animation: fadeInUp 1.4s ease;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #f5576c;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1.6s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        /* Concept Section */
+        .concept {
+            padding: 100px 20px;
+            background: white;
+        }
+        
+        .concept h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .concept .lead {
+            text-align: center;
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .blocks-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+        
+        .block {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        
+        .block:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+        
+        .plus {
+            font-size: 2.5rem;
+            color: #f5576c;
+            font-weight: bold;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            background: #f8f9fa;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 70px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-card .icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            display: block;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #f5576c;
+        }
+        
+        .feature-card p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* What You'll Learn */
+        .curriculum {
+            padding: 100px 20px;
+            background: white;
+        }
+        
+        .curriculum h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 70px;
+        }
+        
+        .module-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .module {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .module h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .module-number {
+            background: rgba(255,255,255,0.3);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+        }
+        
+        .module p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+        
+        .module ul {
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+        
+        .module li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        
+        /* Who Is This For */
+        .audience {
+            padding: 100px 20px;
+            background: #f8f9fa;
+        }
+        
+        .audience h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 70px;
+        }
+        
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .audience-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .audience-card .emoji {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .audience-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .audience-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+        }
+        
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            opacity: 0.95;
+        }
+        
+        .cta-section .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        .cta-section .early-bird {
+            background: rgba(255,255,255,0.2);
+            padding: 20px 40px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+        
+        /* Contact Form */
+        .contact {
+            padding: 100px 20px;
+            background: white;
+        }
+        
+        .contact h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #f5576c;
+        }
+        
+        .form-group textarea {
+            height: 160px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            padding: 18px 60px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .blocks-visual {
+                flex-direction: column;
+            }
+            
+            .plus {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>🧩 Stavte s AI jako s LEGO</h1>
+            <p class="subtitle">Naučte se používat umělou inteligenci jako stavební kostky</p>
+            <p>Praktický kurz pro každého, kdo chce tvořit s AI.<br>Žádné programování. Žádná matematika. Jen výsledky.</p>
+            <a href="#contact" class="cta-button">Chci se přihlásit</a>
+        </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section class="concept">
+        <div class="container">
+            <h2>AI = Černá krabička, která funguje</h2>
+            <p class="lead">
+                Nemusíte rozumět tomu, jak AI funguje uvnitř. Stačí vědět, co jí dát na vstup a co dostanete na výstupu. 
+                Jako když používáte kalkulačku - neřešíte algoritmy, jen zadáte čísla a dostanete výsledek.
+            </p>
+            
+            <div class="blocks-visual">
+                <div class="block">📸 Obrázek</div>
+                <span class="plus">+</span>
+                <div class="block">🤖 AI</div>
+                <span class="plus">=</span>
+                <div class="block">📝 Popis</div>
+            </div>
+            
+            <div class="blocks-visual">
+                <div class="block">🎤 Hlas</div>
+                <span class="plus">+</span>
+                <div class="block">🤖 AI</div>
+                <span class="plus">=</span>
+                <div class="block">📄 Text</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Proč tento kurz?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <span class="icon">🎯</span>
+                    <h3>Prakticky, ne teoreticky</h3>
+                    <p>Žádné přednášky o neuronových sítích. Hned od začátku stavíte reálné projekty.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="icon">🧩</span>
+                    <h3>Modulární přístup</h3>
+                    <p>Naučíte se skládat AI nástroje jako kostky LEGO. Jeden building block = jedna funkce.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="icon">🚀</span>
+                    <h3>Rychlé výsledky</h3>
+                    <p>První funkční projekt během první hodiny. Po kurzu odnášíte hotové nástroje.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="icon">🇨🇿</span>
+                    <h3>V češtině</h3>
+                    <p>Celý kurz v češtině. Pochopíte každé slovo. Žádné googletranslatování.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="icon">💡</span>
+                    <h3>Bez programování</h3>
+                    <p>Nemusíte umět kódovat. Používáte hotové nástroje a API jako stavební bloky.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="icon">🤝</span>
+                    <h3>Komunita</h3>
+                    <p>Nejste sami. Discord server, sdílení projektů, vzájemná pomoc.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="curriculum">
+        <div class="container">
+            <h2>Co se naučíte</h2>
+            <div class="module-list">
+                <div class="module">
+                    <h3>
+                        <span class="module-number">Modul 1</span>
+                        AI Building Blocks - Základy
+                    </h3>
+                    <p>Pochopíte koncept AI jako černé krabičky. Naučíte se, jak funguje vstup-výstup, API, a základní nástroje.</p>
+                    <ul>
+                        <li>Co je API a jak ho používat</li>
+                        <li>Text-to-text: ChatGPT, Claude, další</li>
+                        <li>První projekt: AI asistent pro email</li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>
+                        <span class="module-number">Modul 2</span>
+                        Práce s obrázky
+                    </h3>
+                    <p>Generování obrázků, rozpoznávání obsahu, úpravy. Naučíte se pracovat s vizuálními AI modely.</p>
+                    <ul>
+                        <li>Text-to-image: DALL-E, Midjourney, Stable Diffusion</li>
+                        <li>Image-to-text: rozpoznávání objektů, OCR</li>
+                        <li>Projekt: Automatický popisovač produktů</li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>
+                        <span class="module-number">Modul 3</span>
+                        Audio a video
+                    </h3>
+                    <p>Převod řeči na text, generování hlasu, práce s videem. AI pro multimediální obsah.</p>
+                    <ul>
+                        <li>Speech-to-text: přepisy nahrávek</li>
+                        <li>Text-to-speech: generování hlasu</li>
+                        <li>Projekt: Automatický podcast editor</li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>
+                        <span class="module-number">Modul 4</span>
+                        Skládání bloků dohromady
+                    </h3>
+                    <p>Naučíte se propojovat různé AI nástroje do komplexních systémů. Automatizace workflows.</p>
+                    <ul>
+                        <li>No-code nástroje: Make, Zapier, n8n</li>
+                        <li>Propojování API</li>
+                        <li>Projekt: Kompletní AI workflow pro váš byznys</li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>
+                        <span class="module-number">Modul 5</span>
+                        Váš vlastní AI projekt
+                    </h3>
+                    <p>Samostatný projekt podle vašeho výběru. Mentoring a feedback od lektorů.</p>
+                    <ul>
+                        <li>Návrh řešení</li>
+                        <li>Výběr správných building blocks</li>
+                        <li>Realizace a testování</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Section -->
+    <section class="audience">
+        <div class="container">
+            <h2>Pro koho je to?</h2>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="emoji">👨‍💼</div>
+                    <h3>Podnikatelé</h3>
+                    <p>Chcete automatizovat byznys a ušetřit čas. AI může být váš zaměstnanec.</p>
+                </div>
+                
+                <div class="audience-card">
+                    <div class="emoji">🎨</div>
+                    <h3>Kreativci</h3>
+                    <p>Chcete používat AI pro tvorbu obsahu - texty, obrázky, video, audio.</p>
+                </div>
+                
+                <div class="audience-card">
+                    <div class="emoji">📱</div>
+                    <h3>Marketéři</h3>
+                    <p>Hledáte nástroje pro automatizaci marketingu a generování obsahu.</p>
+                </div>
+                
+                <div class="audience-card">
+                    <div class="emoji">🤓</div>
+                    <h3>Zvědavci</h3>
+                    <p>Chcete pochopit AI a vyzkoušet si, co všechno dokáže. Bez školy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Připraveni začít stavět?</h2>
+            <p>Kurz startuje už příští měsíc. Míst je omezený počet.</p>
+            
+            <div class="early-bird">
+                <div class="price">4.990 Kč</div>
+                <p>Včetně všech modulů, materiálů a přístupu do komunity</p>
+            </div>
+            
+            <a href="#contact" class="cta-button">Rezervovat místo</a>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Mám zájem o kurz</h2>
+            <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Vaše jméno" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Telefon (volitelné)">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Máte nějakou otázku? (volitelné)"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Odeslat přihlášku</button>
+            </form>
+            
+            <div style="margin-top: 60px; text-align: center;">
+                <p><strong>Email:</strong> kurz@aiblocks.cz</p>
+                <p><strong>Máte dotazy?</strong> Napište nám!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AI Building Blocks. Všechna práva vyhrazena.</p>
+            <p>Praktický AI kurz pro Česko a Slovensko 🇨🇿 🇸🇰</p>
+        </div>
+    </footer>
+</body>
+</html>
